@@ -1,4 +1,6 @@
-personal-raineri
-================
+PhoneGap-Start
+---
 
-Personal Raineri (aka. Personal Travis) is a software to guide one at the gym. It focuses on minimizing the need for input.
+A starting point for PhoneGap apps.
+
+To get started: fork this repo, modify the config.xml to match your details, and get building!
