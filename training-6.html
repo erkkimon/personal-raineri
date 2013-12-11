@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<head>
+  <title>Personal Raineri</title>
+  <link href="lib/metrouicss/css/modern.css" rel="stylesheet" type="text/css" />
+  <link href="lib/metrouicss/css/modern-responsive.css" rel="stylesheet" type="text/css" />
+  <link href="lib/metrojs/MetroJs.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="css/training.css" rel="stylesheet" type="text/css" />
+  <script src="lib/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
+  <script src="lib/html5sql/html5sql.js" type="text/javascript"></script>
+  <script src="js/db_functions.js" type="text/javascript"></script>
+  <script src="js/training_functions.js" type="text/javascript"></script>
+  <script src="js/transition.js" type="text/javascript"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+</head>
+<body class="metrouicss">
+  <h1 id="navi-icon-row" class="fg-color-white">
+    <a href="index.html" class="hidden"><span class="icon-home navi-icon"></span></a>
+    <a href="stats.html" class="hidden"><span class="icon-stats-up navi-icon"></span></a>
+    <a href="edit.html" class="hidden"><span class="icon-pencil navi-icon navi-icon-active"></span></a>
+    <a href="#" class="hidden"><span class="icon-save navi-icon"></span></a>
+    <a href="index.html"><span class="icon-arrow-left navi-icon navi-icon"></span></a>
+    <a href="index.html"><span class="icon-cancel-2 navi-icon"></span></a>
+    <a href="#"><span class="icon-pencil navi-icon toggle-edit"></span></a>
+    <span id="sub-title">haasteet</span>
+  </h1>
+  <h1 class="fg-color-white" id="app-title">personal raineri</h1>
+  <!-------------------------------------------->
+  <br /><br />
+  
+  <div id="one">
+    <h3 class="fg-color-white" style="padding-bottom: 10px">jalkaprässi&nbsp;&nbsp;</h3>
+      <!--
+      <span class='default-buttons' style='float: right; margin-right: 0px;'>
+        <a href="#"><span class='icon-film' style="color: #000;'></span></a>
+      </span>
+      -->
+      <span class='edit-buttons' style='display: none; font-size: 24px;'>
+        <a href="#"><span class='icon-plus-2' onclick="goalsPlus('one', 'legpress', 5); return false;"></span></a>
+        <a href="#"><span class='icon-minus-2' onclick="goalsMinus('one', 'legpress', 5); return false;"></span></a>
+      </span>
+    <table class="training-table">
+      <tr><td width="50%">toistot</td><td id="legpress_reps_goal"></td></tr>
+      <tr><td width="50%">paino</td><td id="legpress_weight_goal"></td></tr>
+      <tr><td width="50%">saavutettu</td><td><input type="checkbox" id="legpress_goal_reached" /></td></tr>
+    </table><br />
+  </div>
+  
+  <div id="two">
+    <h3 class="fg-color-white" style="padding-bottom: 10px">askelkyykky&nbsp;&nbsp;</h3>
+      <!--
+      <span class='default-buttons' style='float: right; margin-right: 0px;'>
+        <a href="#"><span class='icon-film' style="color: #000;'></span></a>
+      </span>
+      -->
+      <span class='edit-buttons' style='display: none; font-size: 24px;'>
+        <a href="#"><span class='icon-plus-2' onclick="goalsPlus('two', 'lunge', 5); return false;"></span></a>
+        <a href="#"><span class='icon-minus-2' onclick="goalsMinus('two', 'lunge', 5); return false;"></span></a>
+      </span>
+    <table class="training-table">
+      <tr><td width="50%">toistot</td><td id="lunge_reps_goal"></td></tr>
+      <tr><td width="50%">paino</td><td id="lunge_weight_goal"></td></tr>
+      <tr><td width="50%">saavutettu</td><td><input type="checkbox" id="lunge_goal_reached" /></td></tr>
+    </table><br />
+  </div>
+  
+  <div id="three">
+    <h3 class="fg-color-white" style="padding-bottom: 10px">rinnalleveto&nbsp;&nbsp;</h3>
+      <!--
+      <span class='default-buttons' style='float: right; margin-right: 0px;'>
+        <a href="#"><span class='icon-film' style="color: #000;'></span></a>
+      </span>
+      -->
+      <span class='edit-buttons' style='display: none; font-size: 24px;'>
+        <a href="#"><span class='icon-plus-2' onclick="goalsPlus('three', 'powerclean', 2.5); return false;"></span></a>
+        <a href="#"><span class='icon-minus-2' onclick="goalsMinus('three', 'powerclean', 2.5); return false;"></span></a>
+      </span>
+    <table class="training-table">
+      <tr><td width="50%">toistot</td><td id="powerclean_reps_goal"></td></tr>
+      <tr><td width="50%">paino</td><td id="powerclean_weight_goal"></td></tr>
+      <tr><td width="50%">saavutettu</td><td><input type="checkbox" id="powerclean_goal_reached" /></td></tr>
+    </table><br />
+  </div>
+  
+  <script>
+    $(document).ready(function()
+    {
+      openTheDatabase();
+      setGoal         ("one"   , "legpress",   5   );
+      setGoal         ("two"   , "lunge",      5   );
+      setGoal         ("three" , "powerclean", 2.5 );
+    });
+    $(document).on('click', '.icon-pencil', function(event) 
+    {
+      event.preventDefault();
+      editMode($(this));
+    });
+    $(document).on('click', '.icon-checkmark', function(event) 
+    {
+      event.preventDefault();
+      defaultMode($(this));
+      
+      writeNewRecord("lunge",      getReps("two",   "lunge"),       getWeight("two",   "lunge"),      1 );
+      writeNewRecord("legpress",   getReps("one",   "legpress"),    getWeight("one",   "legpress"),   1 );
+      writeNewRecord("powerclean", getReps("three", "powerclean"),  getWeight("three", "powerclean"), 1 );
+      
+      //console.log(getReps ("one", "legpress"));
+    });
+    $(document).on('click', '.icon-arrow-left', function(event) 
+    {
+      event.preventDefault();
+      saveTraining(6);
+      
+      writeIfNewRecord("legpress"           , "one"  );
+      writeIfNewRecord("lunge"         , "two"  );
+      writeIfNewRecord("powerclean", "three");
+      
+      $("body").fadeOut(400, function()
+      {
+        window.location = "index.html" 
+      });
+    });
+    $(document).on('click', '.icon-cancel-2', function(event) 
+    {
+      event.preventDefault();
+      if (confirm("Do you really want to exit without saving the training?"))
+      {
+        $("body").fadeOut(400, function()
+        {
+          window.location = "index.html"
+        });
+      }
+    });
+  </script>
+</body>

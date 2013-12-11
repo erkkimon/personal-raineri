@@ -1,63 +1,123 @@
-<!doctype html>
-<html>
-	<head>
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
-		<title>Training App</title>
-		<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
-		
-		<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/xui.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/LawnchairAdaptorHelpers.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/DOMStorageAdaptor.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/adaptors/WebkitSQLiteAdaptor.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/lawnchair/Lawnchair.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/dsl.js" type="text/javascript" charset="utf-8"></script>
-		
-		<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
-		
-	</head>
-	<body>
- 		<div id="title_bar">Phone<strong>Gap</strong> Training App</div>
-
-		<div id="welcome" class="view">
-		  <div class="app_button" id="map_button">Show My Location</div>
-  	      <div class="app_button" id="settings_button">Settings</div>
-		</div>
-
-		<div id="map" class="view">
-		  <div class="map_image">
-              <img id="static_map" src="assets/img/staticmap.png">
-		  </div>
-		  <p>This is where you are</p>
-		  <div class="app_button" id="welcome_button">Go Back</div>
-		</div>
-
-		<div id="settings" class="view">
-		  <form id="settings_form">
-		    <fieldset>
-		      <legend>Map Type</legend>
-			  <input type="radio" name="map" value="roadmap" checked>Road Map<br/>
-		      <input type="radio" name="map" value="satellite">Satellite<br/>
-		      <input type="radio" name="map" value="terrain">Terrain<br/>
-		      <input type="radio" name="map" value="hybrid">Hybrid<br/>
-		    </fieldset>
-		    <fieldset>
-		      <legend>Zoom Level</legend>
-  		      <input type="radio" name="zoom" value="10">Super Far<br/>
-  		      <input type="radio" name="zoom" value="12">Far<br/>
-  		      <input type="radio" name="zoom" value="15" checked>Normal<br/>
-  		      <input type="radio" name="zoom" value="18">Close<br/>
-  		      <input type="radio" name="zoom" value="20">Super Close<br/>
-  		     </fieldset>
-		      <button id="save_button">Save</button>
-	      </form>
-		</div>
-
-	</body>
+﻿<!DOCTYPE html>
+<head>
+  <title>Personal Raineri</title>
+  <link href="lib/metrouicss/css/modern.css" rel="stylesheet" type="text/css" />
+  <link href="lib/metrouicss/css/modern-responsive.css" rel="stylesheet" type="text/css" />
+  <link href="lib/metrojs/MetroJs.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="lib/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
+  <script src="lib/html5sql/html5sql.js" type="text/javascript"></script>
+  <script src="js/db_functions.js" type="text/javascript"></script>
+  <script src="js/transition.js" type="text/javascript"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+</head>
+<body class="metrouicss">
+  <h1 id="navi-icon-row">
+    <a href="stats.html" class="hidden"><span class="icon-stats-up navi-icon"></span></a>
+    <a href="#" class="hidden"><span class="icon-loop navi-icon"></span></a>
+    <a href="#" class="hidden"><span class="icon-save navi-icon"></span></a>
+    <a href="#" class="hidden"><span class="icon-cancel-2 navi-icon"></span></a>
+    <span class="icon-cancel-2 navi-icon" style="border: #000; color: #000"></span><!-- Just a place holder -->
+    <span id="sub-title">seuraava treeni</span>
+  </h1>
+  <h1 class="fg-color-white" id="app-title">personal raineri</h1>
+  <!-------------------------------------------->
+  <div class="wrap">
+    <div class="box">
+      <div class="boxInner">
+        <div class="tiles">
+          <a href="training-1.html" class="transition">
+            <div class="live-tile" data-mode="flip" data-initdelay="3000" id="tile-1">
+              <div class="tile-side-1"><div class="tile-content">penkki<br />vinopenkki<br />ranskalainen punnerrus</div></div>
+              <div class="tile-side-2"><div class="tile-content">penkki<br />vinopenkki<br />ranskalainen punnerrus</div></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <div class="tiles">
+          <a href="training-2.html" class="transition">
+            <div class="live-tile" data-mode="flip" data-initdelay="3000" id="tile-2">
+              <div class="tile-side-1"><div class="tile-content">ylätalja<br />alatalja<br />hauiskääntö</div></div>
+              <div class="tile-side-2"><div class="tile-content">ylätalja<br />alatalja<br />hauiskääntö</div></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <div class="tiles">
+          <a href="training-3.html" class="transition">
+            <div class="live-tile" data-mode="flip" data-initdelay="3000" id="tile-3">
+              <div class="tile-side-1"><div class="tile-content">maastaveto<br />jalanojennus<br />jalankoukistus</div></div>
+              <div class="tile-side-2"><div class="tile-content">maastaveto<br />jalanojennus<br />jalankoukistus</div></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <div class="tiles">
+          <a href="training-4.html" class="transition">
+            <div class="live-tile" data-mode="flip" data-initdelay="3000" id="tile-4">
+              <div class="tile-side-1"><div class="tile-content">pystysoutu<br />pystypunnerrus<br />olankohautus</div></div>
+              <div class="tile-side-2"><div class="tile-content">pystysoutu<br />pystypunnerrus<br />olankohautus</div></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <div class="tiles">
+          <a href="training-5.html" class="transition">
+            <div class="live-tile" data-mode="flip" data-initdelay="3000" id="tile-5">
+              <div class="tile-side-1"><div class="tile-content">kulmasoutu<br />rintarutistus<br />vasarakääntö</div></div>
+              <div class="tile-side-2"><div class="tile-content">kulmasoutu<br />rintarutistus<br />vasarakääntö</div></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <div class="tiles">
+          <a href="training-6.html" class="transition">
+            <div class="live-tile" data-mode="flip" data-initdelay="3000" id="tile-6">
+              <div class="tile-side-1"><div class="tile-content">jalkaprässi<br />askelkyykky<br />rinnalleveto</div></div>
+              <div class="tile-side-2"><div class="tile-content">jalkaprässi<br />askelkyykky<br />rinnalleveto</div></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="lib/metrojs/MetroJs.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(document).ready(function() 
+    {
+      openTheDatabase();
+      createTables(); 
+      writeDefaultsToTables();
+      $(".live-tile").liveTile();
+      suggestNextTraining();
+    });
+    $(document).on('click', '.icon-checkmark', function(event) 
+    {
+      event.preventDefault();
+      defaultMode($(this));
+    });
+    $(document).on('click', '.icon-loop', function(event) 
+    {
+      event.preventDefault();
+      dropTables(); createTables(); writeDefaultsToTables();
+    });
+  </script>
+</body>
 </html>
+
+

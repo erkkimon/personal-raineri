@@ -1,0 +1,10 @@
+.metrouicss .input-control > select
+{
+  background: #000;
+  color: #FFF;
+}
+.metrouicss table tbody tr td
+{
+  border-bottom: 1px #2C3539 solid;
+  border-right: 1px #2C3539 solid;
+}

@@ -1,0 +1,129 @@
+/* GENERAL STYLING */
+
+html
+{
+  background: #000;
+}
+body 
+{
+   margin: 0;
+   padding: 0;
+   background: #000;
+   font: 10px/13px 'Lucida Sans',sans-serif;
+   display: none;
+}
+
+/* MAIN VIEW STRUCTURE */
+
+.tiles
+{
+  height: 100%;
+  width: 100%;
+}
+.live-tile
+{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+.wrap 
+{
+   overflow: hidden;
+   margin: 10px;
+}
+.box {
+   float: left;
+   position: relative;
+   width: 20%;
+   padding-bottom: 20%;
+      width: 50%;
+      padding-bottom: 50%;
+}
+.boxInner 
+{
+   position: absolute;
+   left: 10px;
+   right: 10px;
+   top: 10px;
+   bottom: 10px;
+   overflow: hidden;
+}
+.boxInner img 
+{
+   width: 100%;
+}
+.boxInner .titleBox 
+{
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin-bottom: -50px;
+   background: #000;
+   background: rgba(0, 0, 0, 0.5);
+   color: #FFF;
+   padding: 10px;
+   text-align: center;
+   -webkit-transition: all 0.3s ease-out;
+   -moz-transition: all 0.3s ease-out;
+   -o-transition: all 0.3s ease-out;
+   transition: all 0.3s ease-out;
+}
+body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleBox 
+{
+   margin-bottom: 0;
+}
+
+/* LIVE TILES */
+
+.tile-side-1
+{
+  background-color: red;
+}
+.tile-side-2
+{
+  background-color: green;
+}
+.tile-suggested
+{
+  background-color: #A2BC13;
+}
+.tile-content
+{
+  margin: 4%;
+}
+
+/* TEXT AND FONTS */
+
+#app-title
+{
+  text-transform: lowercase;
+}
+#sub-title
+{
+  text-transform: lowercase;
+  position: absolute; 
+  right: 1em; 
+  color: white; 
+  font-size: 50%;
+}
+
+/* NAVIGATION ICONS */
+
+.navi-icon
+{
+  color: white; 
+  border: solid #FFF 2px; 
+  padding: 15px; 
+  border-radius: 50%;
+  font-size: 50%;
+}
+.navi-icon-active
+{
+  border: solid #2e92cf 2px; 
+  color: #2e92cf;
+}
+.hidden
+{
+  display: none;
+}
