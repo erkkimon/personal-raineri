@@ -35,7 +35,8 @@ body *
    overflow: hidden;
    margin: 10px;
 }
-.box {
+.box 
+{
    float: left;
    position: relative;
    width: 20%;
