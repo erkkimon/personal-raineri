@@ -2,7 +2,7 @@
 <widget xmlns      = "http://www.w3.org/ns/widgets"
         xmlns:gap  = "http://phonegap.com/ns/1.0"
         id         = "fi.personalraineri"
-        version    = "0.3.0">
+        version    = "0.3.2">
 
 	<name>Personal Raineri</name>
 
@@ -32,8 +32,10 @@
 	<feature name="http://api.phonegap.com/1.0/geolocation" />
 	<feature name="http://api.phonegap.com/1.0/network" />
 	
-	<gap:plugin name="org.apache.cordova.globalization" />
+	<gap:plugin name="org.apache.cordova.globalization" version="0.1.0" />
 
 	<!-- sample preference specification -->
 	<!-- <preference name="autorotate" value="false" readonly="true" /> -->
+	
+	<preference name="phonegap-version" value="3.0.0" />
 </widget>
