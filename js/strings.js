@@ -1,18 +1,25 @@
+
+function checkLanguage() {
+  alert("asdf");
+  navigator.globalization.getPreferredLanguage(
+    function (language) {alert('language: ' + language.value + '\n');},
+    function () {alert('Error getting language\n');}
+  );
+}
+
 $(document).ready(function() 
 {
 	// Apply translations
-	var lang = "fi";
+	var lang = "en";
 	function AppViewModel() 
 	{
 		if (lang == "en")
 		{
-			this.appName = "personal travis";
-			this.lastName = "Bertington";
+			this.personalTravis = "personal travis";
 		}
 		if (lang == "fi")
 		{
-			this.appName = "personal raineri";
-			this.lastName = "Perttinen";
+			this.personalTravis = "personal raineri";
 		}
 	}
 	// Activate knockout.js
