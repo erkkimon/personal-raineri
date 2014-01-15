@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <widget xmlns      = "http://www.w3.org/ns/widgets"
         xmlns:gap  = "http://phonegap.com/ns/1.0"
         id         = "fi.personalraineri"
@@ -16,26 +17,23 @@
 		painoilla. Se on Personal Rainerin duunia.
 	</description>
 
-	<author href="http://himanen.info"
-		email="tom@himanen.info">
+	<author href="http://himanen.info" email="tom@himanen.info">
 		Tom Himanen
 	</author>
+
+	<icon src="img/icon.png" gap:role="default" />
 
 	<gap:platforms>
 		<gap:platform name="android" minVersion="2.1" />
 	</gap:platforms>
 
-	<icon src="img/icon.png" gap:role="default" />
-
-        <gap:splash src="img/splash.9.png" />
+  <gap:splash src="img/splash.9.png" />
+	
+	<gap:plugin name="org.apache.cordova.globalization" version="0.1.0" />
 
 	<feature name="http://api.phonegap.com/1.0/geolocation" />
 	<feature name="http://api.phonegap.com/1.0/network" />
 	
-	<gap:plugin name="org.apache.cordova.globalization" version="0.1.0" />
-
-	<!-- sample preference specification -->
-	<!-- <preference name="autorotate" value="false" readonly="true" /> -->
-	
 	<preference name="phonegap-version" value="3.0.0" />
+	
 </widget>
