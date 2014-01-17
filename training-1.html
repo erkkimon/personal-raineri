@@ -8,6 +8,7 @@
   <link href="css/training.css" rel="stylesheet" type="text/css" />
   <script src="lib/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
   <script src="lib/html5sql/html5sql.js" type="text/javascript"></script>
+  <script src="lib/knockoutjs/knockout-3.0.0.js" type="text/javascript"></script>
   <script src="js/db_functions.js" type="text/javascript"></script>
   <script src="js/training_functions.js" type="text/javascript"></script>
   <script src="js/transition.js" type="text/javascript"></script>
@@ -22,14 +23,14 @@
     <a href="index.html"><span class="icon-arrow-left navi-icon navi-icon"></span></a>
     <a href="index.html"><span class="icon-cancel-2 navi-icon"></span></a>
     <a href="#"><span class="icon-pencil navi-icon toggle-edit"></span></a>
-    <span id="sub-title">haasteet</span>
+    <span id="sub-title" data-bind="text: goals"></span>
   </h1>
-  <h1 class="fg-color-white" id="app-title">personal raineri</h1>
+  <h1 class="fg-color-white" id="app-title" data-bind="text: personalTravis"></h1>
   <!-------------------------------------------->
   <br /><br />
   
   <div id="one">
-    <h3 class="fg-color-white" style="padding-bottom: 10px">penkkipunnerrus&nbsp;&nbsp;</h3>
+    <h3 class="fg-color-white" style="padding-bottom: 10px" data-bind="text: benchpress"></h3>
       <!--
       <span class='default-buttons' style='float: right; margin-right: 0px;'>
         <a href="#"><span class='icon-film' style='color: #000;'></span></a>
@@ -40,14 +41,14 @@
         <a href="#"><span class='icon-minus-2' onclick="goalsMinus('one', 'benchpress', 2.5); return false;"></span></a>
       </span>
     <table class="training-table">
-      <tr><td width="50%">toistot</td><td id="benchpress_reps_goal"></td></tr>
-      <tr><td width="50%">paino</td><td id="benchpress_weight_goal"></td></tr>
-      <tr><td width="50%">saavutettu</td><td><input type="checkbox" id="benchpress_goal_reached" /></td></tr>
+      <tr><td width="50%" data-bind="text: reps"></td><td id="benchpress_reps_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: weight"></td><td id="benchpress_weight_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: achieved"></td><td><input type="checkbox" id="benchpress_goal_reached" /></td></tr>
     </table><br />
   </div>
   
   <div id="two">
-    <h3 class="fg-color-white" style="padding-bottom: 10px">vinopenkkipunnerrus&nbsp;&nbsp;</h3>
+    <h3 class="fg-color-white" style="padding-bottom: 10px" data-bind="text: inclinepress"></h3>
       <!--
       <span class='default-buttons' style='float: right; margin-right: 0px;'>
         <a href="#"><span class='icon-film' style='color: #000;'></span></a>
@@ -58,14 +59,14 @@
         <a href="#"><span class='icon-minus-2' onclick="goalsMinus('two', 'inclinepress', 2.5); return false;"></span></a>
       </span>
     <table class="training-table">
-      <tr><td width="50%">toistot</td><td id="inclinepress_reps_goal"></td></tr>
-      <tr><td width="50%">paino</td><td id="inclinepress_weight_goal"></td></tr>
-      <tr><td width="50%">saavutettu</td><td><input type="checkbox" id="inclinepress_goal_reached" /></td></tr>
+      <tr><td width="50%" data-bind="text: reps"></td><td id="inclinepress_reps_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: weight"></td><td id="inclinepress_weight_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: achieved"></td><td><input type="checkbox" id="inclinepress_goal_reached" /></td></tr>
     </table><br />
   </div>
   
   <div id="three">
-    <h3 class="fg-color-white" style="padding-bottom: 10px">ranskalainen punnerrus&nbsp;&nbsp;</h3>
+    <h3 class="fg-color-white" style="padding-bottom: 10px" data-bind="text: lyingtricepsextension"></h3>
       <!--
       <span class='default-buttons' style='float: right; margin-right: 0px;'>
         <a href="#"><span class='icon-film' style='color: #000;'></span></a>
@@ -76,9 +77,9 @@
         <a href="#"><span class='icon-minus-2' onclick="goalsMinus('three', 'lyingtricepsextension', 1); return false;"></span></a>
       </span>
     <table class="training-table">
-      <tr><td width="50%">toistot</td><td id="lyingtricepsextension_reps_goal"></td></tr>
-      <tr><td width="50%">paino</td><td id="lyingtricepsextension_weight_goal"></td></tr>
-      <tr><td width="50%">saavutettu</td><td><input type="checkbox" id="lyingtricepsextension_goal_reached" /></td></tr>
+      <tr><td width="50%" data-bind="text: reps"></td><td id="lyingtricepsextension_reps_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: weight"></td><td id="lyingtricepsextension_weight_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: achieved"></td><td><input type="checkbox" id="lyingtricepsextension_goal_reached" /></td></tr>
     </table><br />
   </div>
   
@@ -132,4 +133,5 @@
       }
     });
   </script>
+  <script src="js/strings.js" type="text/javascript"></script>
 </body>
