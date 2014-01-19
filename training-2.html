@@ -30,7 +30,7 @@
   <br /><br />
   
   <div id="one">
-    <h3 class="fg-color-white" style="padding-bottom: 10px">ylätalja&nbsp;&nbsp;</h3>
+    <h3 class="fg-color-white" style="padding-bottom: 10px" data-bind="text: cablepulldown"></h3>
       <!--
       <span class='default-buttons' style='float: right; margin-right: 0px;'>
         <a href="#"><span class='icon-film' style="color: #000;'></span></a>
@@ -41,14 +41,14 @@
         <a href="#"><span class='icon-minus-2' onclick="goalsMinus('one', 'cablepulldown', 5); return false;"></span></a>
       </span>
     <table class="training-table">
-      <tr><td width="50%">toistot</td><td id="cablepulldown_reps_goal"></td></tr>
-      <tr><td width="50%">paino</td><td id="cablepulldown_weight_goal"></td></tr>
-      <tr><td width="50%">saavutettu</td><td><input type="checkbox" id="cablepulldown_goal_reached" /></td></tr>
+      <tr><td width="50%" data-bind="text: reps"></td><td id="cablepulldown_reps_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: weight"></td><td id="cablepulldown_weight_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: achieved"></td><td><input type="checkbox" id="cablepulldown_goal_reached" /></td></tr>
     </table><br />
   </div>
   
   <div id="two">
-    <h3 class="fg-color-white" style="padding-bottom: 10px">alatalja&nbsp;&nbsp;</h3>
+    <h3 class="fg-color-white" style="padding-bottom: 10px" data-bind="text: cableseatedrow"></h3>
       <!--
       <span class='default-buttons' style='float: right; margin-right: 0px;'>
         <a href="#"><span class='icon-film' style="color: #000;'></span></a>
@@ -59,14 +59,14 @@
         <a href="#"><span class='icon-minus-2' onclick="goalsMinus('two', 'cableseatedrow', 5); return false;"></span></a>
       </span>
     <table class="training-table">
-      <tr><td width="50%">toistot</td><td id="cableseatedrow_reps_goal"></td></tr>
-      <tr><td width="50%">paino</td><td id="cableseatedrow_weight_goal"></td></tr>
-      <tr><td width="50%">saavutettu</td><td><input type="checkbox" id="cableseatedrow_goal_reached" /></td></tr>
+      <tr><td width="50%" data-bind="text: reps"></td><td id="cableseatedrow_reps_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: weight"></td><td id="cableseatedrow_weight_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: achieved"></td><td><input type="checkbox" id="cableseatedrow_goal_reached" /></td></tr>
     </table><br />
   </div>
   
   <div id="three">
-    <h3 class="fg-color-white" style="padding-bottom: 10px">hauiskääntö&nbsp;&nbsp;</h3>
+    <h3 class="fg-color-white" style="padding-bottom: 10px" data-bind="text: bicepscurl"></h3>
       <!--
       <span class='default-buttons' style='float: right; margin-right: 0px;'>
         <a href="#"><span class='icon-film' style="color: #000;'></span></a>
@@ -77,9 +77,9 @@
         <a href="#"><span class='icon-minus-2' onclick="goalsMinus('three', 'bicepscurl', 1); return false;"></span></a>
       </span>
     <table class="training-table">
-      <tr><td width="50%">toistot</td><td id="bicepscurl_reps_goal"></td></tr>
-      <tr><td width="50%">paino</td><td id="bicepscurl_weight_goal"></td></tr>
-      <tr><td width="50%">saavutettu</td><td><input type="checkbox" id="bicepscurl_goal_reached" /></td></tr>
+      <tr><td width="50%" data-bind="text: reps"></td><td id="bicepscurl_reps_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: weight"></td><td id="bicepscurl_weight_goal"></td></tr>
+      <tr><td width="50%" data-bind="text: achieved"></td><td><input type="checkbox" id="bicepscurl_goal_reached" /></td></tr>
     </table><br />
   </div>
   
