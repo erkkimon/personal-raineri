@@ -6,23 +6,17 @@
   <link href="lib/metrojs/MetroJs.css" rel="stylesheet" type="text/css" />
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="lib/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
-  <script src="lib/html5sql/html5sql.js" type="text/javascript"></script>
   <script src="lib/knockoutjs/knockout-3.0.0.js" type="text/javascript"></script>
-  <script src="js/db_functions.js" type="text/javascript"></script>
   <script src="js/transition.js" type="text/javascript"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 </head>
 <body class="metrouicss">
   <h1 id="navi-icon-row">
-    <a href="stats.html" class="hidden"><span class="icon-stats-up navi-icon"></span></a>
-    <a href="#" class="hidden"><span class="icon-loop navi-icon"></span></a>
-    <a href="#" class="hidden"><span class="icon-save navi-icon"></span></a>
-    <a href="#" class="hidden"><span class="icon-cancel-2 navi-icon"></span></a>
     <span class="icon-cancel-2 navi-icon" style="border: #000; color: #000"></span><!-- Just a place holder -->
     <span id="sub-title" data-bind="text: nextTraining"></span>
   </h1>
   <h1 class="fg-color-white" id="app-title" data-bind="text: personalTravis"></h1>
-  <!-------------------------------------------->
+  
   <div class="wrap">
     <div class="box">
       <div class="boxInner">
@@ -101,21 +95,7 @@
   <script type="text/javascript">
     $(document).ready(function() 
     {
-      openTheDatabase();
-      createTables(); 
-      writeDefaultsToTables();
       $(".live-tile").liveTile();
-      suggestNextTraining();
-    });
-    $(document).on('click', '.icon-checkmark', function(event) 
-    {
-      event.preventDefault();
-      defaultMode($(this));
-    });
-    $(document).on('click', '.icon-loop', function(event) 
-    {
-      event.preventDefault();
-      dropTables(); createTables(); writeDefaultsToTables();
     });
   </script>
   <script src="js/strings.js" type="text/javascript"></script>
