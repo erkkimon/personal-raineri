@@ -36,4 +36,6 @@
 	
 	<preference name="phonegap-version" value="3.0.0" />
 	
+	<preference name="orientation" value="portait" />
+	
 </widget>
